@@ -19,3 +19,7 @@ bancaire en cours de développement.
 + *Fond avec le logo de l'application mis en commentaire pour des raisons de fonctionnalités*
 
 **II.**
+Implémentation des classes de type model **Compte** *(iban, solde, transactions)*, et **Transaction** *(montant, date, libelle, categorie)*.
+Début de l'implémentation du menu **File** dans la classe **MenuView**.
++ *Ajout des classes Compte et Transaction*
++ **
