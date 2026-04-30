@@ -7,8 +7,18 @@ de transactions bancaires*
 et esquisses qui montreront l'idée genéral ainsi que son développement.*
 
 ***
-## Cahier des Charges 
-$***$ IMPLEMENTER AVEC L'ENONCE $***$
+## Cahier des Charges
+
++ **Affichage globale** -> Affiche une collection plus ou moins grande pour visualiser tous les elements
++ **Affichage ciblé** -> Affiche un élément de la collection à visualiser (voir tous les détails)
++ **Fonction d'ajout** -> Permet d'ajouter d'un ou plusieurs objet(s) dans la collection
++ **Fonction de suppression** -> Permet de supprimer un ou plusieurs objet(s) dans la collection
++ **Fonction de modification** -> Permet de modifier les données d'un ou plusieurs objet(s) dans la collection
++ **Import/Export** -> On peut importer une collection depuis un fichier ainsi que l'exporter
++ **Option de Filtrage** -> Permet de filtrer la collection
++ **Option de Tri** -> Permet de trier la collection
+    >*Le tri et le filtre doivent être complémentaire et non supérieur l'un à l'autre !*
++ **Touche Personnel** -> Ajout d'une fonctionnalité non-trivial
 
 ***
 ## Phase de développement 
