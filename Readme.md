@@ -29,7 +29,16 @@ bancaire en cours de développement.
 + *Fond avec le logo de l'application mis en commentaire pour des raisons de fonctionnalités*
 
 **II.**
-Implémentation des classes de type model **Compte** *(iban, solde, transactions)*, et **Transaction** *(montant, date, libelle, categorie)*.
-Début de l'implémentation du menu **File** dans la classe **MenuView**.
-+ *Ajout des classes Compte et Transaction*
-+ **
+Implémentation des classes de type modele : 
++ **Transaction** *(montant, date, libelle, categorie)*
++ **Compte** *(iban, solde, transactions)*
++ **Client** *(id, nom, prenom, dateNaissance, comptes)* **OU**  
+**Client** *(id, nom, prenom, dateNaissances, comptes, adresse, email, telephone)* 
+  >La classe **Client** contient deux constructeurs qui permettent d'ajouter des informations complémentaires ou non
++ **Banque** *(nom, clients)*
+
+Ainsi, il y a aussi le maintient à jour du diagramme UML pour les classes de modèles.
+
+
+**III.**
+*Début de l'implémentation du menu **File** dans la classe **MenuView**.*
