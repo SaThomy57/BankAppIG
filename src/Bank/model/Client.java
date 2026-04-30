@@ -1,6 +1,8 @@
 package Bank.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Client {
@@ -8,7 +10,7 @@ public class Client {
     private final int id;
     private String nom;
     private String prenom;
-    private String dateNaissance;
+    private LocalDate dateNaissance;
     private List<Compte> comptes;
 
     // Attribut essentiel complémentaire à un client
@@ -17,7 +19,7 @@ public class Client {
     private String telephone;
 
     // Constructeurs
-    public Client(int id, String nom, String prenom, String dateNaissance, String adresse, String email, String telephone) {
+    public Client(int id, String nom, String prenom, LocalDate dateNaissance, String adresse, String email, String telephone) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -27,7 +29,7 @@ public class Client {
         this.telephone = telephone;
         comptes = new ArrayList<>();
     }
-    public Client(int id, String nom, String prenom, String dateNaissance) {
+    public Client(int id, String nom, String prenom, LocalDate dateNaissance) {
         this(id, nom, prenom, dateNaissance, null, null, null);
     }
 
@@ -42,7 +44,7 @@ public class Client {
 
     // AJout & retrait d'un cmpte de la liste
     public void ajouterCompte(Compte compte) {
-        comptes.add(compte);
+        if (comptes != null) comptes.add(compte);
     }
     public void retirerCompte(Compte compte) {
         comptes.remove(compte);
@@ -58,14 +60,11 @@ public class Client {
     public String getPrenom() {
         return prenom;
     }
-    public String getDateNaissance() {
+    public LocalDate getDateNaissance() {
         return dateNaissance;
     }
     public List<Compte> getComptes() {
-        return comptes;
-    }
-    public Compte getCompte(int id) {
-        return comptes.get(id);
+        return Collections.unmodifiableList(comptes);
     }
 
     // Getter complementaire
@@ -86,7 +85,7 @@ public class Client {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-    public void setDateNaissance(String dateNaissance) {
+    public void setDateNaissance(LocalDate dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
