@@ -40,5 +40,18 @@ Implémentation des classes de type modele :
 Ainsi, il y a aussi le maintient à jour du diagramme UML pour les classes de modèles.
 
 
-**III.**
+**III.**  
+1. Implementation des interfaces 'XxxxViewModel' :
+* **TransactionViewModel**
+* **CompteViewModel**
+* **ClientDetailsViewModel**
+* **BanqueViewModel**
+2. Implementation des interfaces 'XxxxViewModel' les classes 'StubXxxxViewModel' :
++ **StubTransactionViewModel**
++ **StubCompteViewModel**
++ **StubClientDetailsViewModel**
++ **StubBanqueViewModel**
+>*Toutes les classes et interfaces sont pensées pour être structurée et simple à comprendre en cas d'erreur.*
+
+**IV.**
 *Début de l'implémentation du menu **File** dans la classe **MenuView**.*
