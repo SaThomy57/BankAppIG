@@ -10,7 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
 
-public class StubClientDetailViewModel implements ClientDetailsViewModel {
+public class StubClientDetailsViewModel implements ClientDetailsViewModel {
     private final StringProperty nomComplet = new SimpleStringProperty("");
     private final DoubleProperty soldeTotal = new SimpleDoubleProperty(0.0);
     private final ObservableList<CompteViewModel> comptes = FXCollections.observableArrayList();
