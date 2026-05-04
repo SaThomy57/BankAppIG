@@ -60,6 +60,9 @@ public class Client {
     public String getPrenom() {
         return prenom;
     }
+    public String getNomComplet() {
+        return nom + " " + prenom;
+    }
     public LocalDate getDateNaissance() {
         return dateNaissance;
     }
