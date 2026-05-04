@@ -1,15 +1,43 @@
+import Bank.util.controller.MainController;
+import Bank.viewModel.BanqueViewModel;
+import Bank.viewModel.stubViewModel.StubBanqueViewModel;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 
-public class Bank extends Application {
-    public void start(Stage stage){
-        BorderPane root = new BorderPane();
+import java.io.IOException;
 
-        Scene scene = new Scene(root,1200,800);
+public class Bank extends Application {
+    @Override
+    public void start(Stage stage) throws IOException {
+        //Remplacement du BorderPane par le BanqueViewModel
+        BanqueViewModel banqueVM = new StubBanqueViewModel();
+
+        //Verification du chemin
+        java.net.URL resource = getClass().getResource("/Bank/view/MainView.fxml");
+        if (resource == null) {
+            System.err.println("ERREUR : Fichier FXML introuvable dans /Bank/view/MainView.fxml");
+            System.err.println("Vérifiez que le dossier 'view' est bien dans 'src/Bank/'");
+            return;
+        }
+
+        FXMLLoader loader = new FXMLLoader(resource);
+
+        // Configuration de la ControllerFactory
+        loader.setControllerFactory(clazz->{
+            if(clazz ==MainController.class){
+                MainController controller = new MainController();
+                controller.initializeVM(banqueVM);
+                return controller;
+            }
+            return null;
+        });
+
 
         // Chargement de l'icone de l'application
         try{
@@ -46,7 +74,8 @@ public class Bank extends Application {
             System.err.println("Erreur chargement image : " + e.getMessage());
         }*/
 
-        stage.setScene(scene);
+        Parent root = loader.load();
+        stage.setScene(new Scene(root));
         stage.setTitle("Bank");
         stage.show();
     }
