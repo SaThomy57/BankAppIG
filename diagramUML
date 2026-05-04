@@ -1,0 +1,23 @@
+@startuml
+package "bank"{
+
+package "model"{
+class Banque{}
+class Client{}
+class Compte{}
+class Transaction{}
+
+Banque --"*" Client
+Client --"*" Compte
+Compte --"*" Transaction
+
+}
+
+package "view"{}
+
+package "viewModel"{}
+
+
+}
+
+@enduml
