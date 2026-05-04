@@ -12,5 +12,5 @@ public interface BanqueViewModel {
     StringProperty filtreTexteProperty();
 
     // Methode d'ajout d'un client
-    void ajouterClientSimple(String nom, String prenom, String dateNaissance);
+    void ajouterClientSimple(Client client);
 }
