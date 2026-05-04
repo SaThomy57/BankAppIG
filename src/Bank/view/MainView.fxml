@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Bank.util.controller.MainController">
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10">
+            <Label text="Recherche de client (Nom, Prénom, n°)" style="-fx-font-weight: bold;" />
+            <!--Le TextField est le filtre complementaire-->
+            <TextField fx:id="searchField" promptText="Saisissez un critère.. "/>
+        </VBox>
+    </top>
+    <center>
+        <!--La ListView affichera la collection-->
+        <ListView fx:id="clientListView" BorderPane.alignment="CENTER"/>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="15" style="-fx-padding: 10">
+            <Button text="Ajouter Client" onAction="#handleAjouterClient"/>
+            <Button text="Trier la collection" onAction="#handleTri"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
