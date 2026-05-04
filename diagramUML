@@ -15,9 +15,35 @@ Compte --"*" Transaction
 
 package "view"{}
 
-package "viewModel"{}
+package "viewModel"{
+interface BanqueViewModel{}
+interface ClientDetailsViewModel{}
+interface CompteViewModel{}
+interface TransactionViewModel{}
+
+package "StubViewModel"{
+class StubBanqueViewModel{}
+class StubClientDetailsViewModel{}
+class StubCompteViewModel{}
+class StubTransactionViewModel{}
+
+StubBanqueViewModel o-- StubClientDetailsViewModel
+StubClientDetailsViewModel o-- StubCompteViewModel
+StubCompteViewModel o-- StubTransactionViewModel
+
+StubBanqueViewModel ..|> BanqueViewModel
+StubClientDetailsViewModel..|> ClientDetailsViewModel
+StubCompteViewModel..|> CompteViewModel
+StubTransactionViewModel..|> TransactionViewModel
+}
+
+BanqueViewModel o--"*" ClientDetailsViewModel
+ClientDetailsViewModel o--"*" CompteViewModel
+CompteViewModel o--"*" TransactionViewModel
 
 
 }
 
+
+}
 @enduml
