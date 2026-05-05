@@ -1,0 +1,23 @@
+<?wml version="1.0" encoding="UTF-8" ?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.PieChart?>
+<VBox spacing="20" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Bank.util.controller.ClientDetailController">
+    <children>
+        <Button text="&lt; Retour à la liste" onAction="#handleRetour" />
+        <Label fx:id="nomClientLabel" style="-fx-font-size:24px; -fx-font-weight: bold;" text="Nom du Client"/>
+        <HBox spacing="30" VBox.vgrow="ALWAYS">
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <Label text="Comptes Bancaire" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <ListView fx:id="comptesListView"/>
+            </VBox>
+            <VBox spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                <Label text="" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <PieChart fx:id="budgetPieChart" prefWidth="300" prefHeight="300"/>
+            </VBox>
+
+        </HBox>
+
+    </children>
+</VBox>
