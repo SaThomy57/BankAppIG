@@ -19,4 +19,12 @@ public class StubCompteViewModel implements CompteViewModel {
     public DoubleProperty soldeProperty() {
         return solde;
     }
+    @Override
+    public String getType() {
+        return "Courant";
+    }
+    @Override
+    public double getSolde() {
+        return solde.get();
+    }
 }
