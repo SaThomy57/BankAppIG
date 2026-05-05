@@ -6,6 +6,7 @@ import Bank.viewModel.stubViewModel.StubClientDetailsViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 
@@ -74,7 +75,12 @@ public class MainController {
             });
 
             Parent view = loader.load();
-            mainPane.setCenter(view);
+
+            //CHange tout l'affichage
+            Scene scene = clientListView.getScene();
+            scene.setRoot(view);
+            //Change qu'une artie de l'affichage
+            //mainPane.setCenter(view);
         } catch (IOException e){
             e.printStackTrace();
         }
