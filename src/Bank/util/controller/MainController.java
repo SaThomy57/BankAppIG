@@ -18,6 +18,20 @@ public class MainController {
         setupBidings();
     }
 
+    @FXML
+    public void initialize(){
+        // On définit le style de la liste
+        clientListView.setCellFactory(listView -> new UserCellController());
+
+        // ecoute le clic sur client
+        clientListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null){
+                System.out.println("Selection : " + newValue.getNomComplet());
+            }
+        });
+        if (banqueVM != null) setupBidings();
+    }
+
     private void setupBidings() {
         if(searchField != null && banqueVM != null) {
             // Liaison bidirectionnelle de la barre de recherche
