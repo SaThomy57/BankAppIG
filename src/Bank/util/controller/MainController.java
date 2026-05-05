@@ -9,6 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -88,7 +90,29 @@ public class MainController {
     @FXML
     private void handleAjouterClient(){
         //Appelle la methode d'ajout definie dans 'BanqueViewModel'
-        banqueVM.ajouterClientSimple(new Client(0, "Nouveau", "Usager", null));
+        //banqueVM.ajouterClientSimple(new Client(0, "Nouveau", "Usager", null));
+        try{
+            // On charge un FXML de popUp
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Bank/view/AjouterClientView.fxml"));
+            Parent root = loader.load();
+
+            // Definition de la fenetre de popUp
+            Stage popUpStage = new Stage();
+            popUpStage.setTitle("Ajouter un nouveau client");
+            popUpStage.initModality(Modality.APPLICATION_MODAL);
+            popUpStage.setScene(new Scene(root));
+
+            AjouterClientController controller = loader.getController();
+            popUpStage.showAndWait();
+
+            Client nouveauClient = controller.getNouveauClient();
+            if (nouveauClient!=null && banqueVM != null) {
+                banqueVM.ajouterClientSimple(nouveauClient);
+            }
+        } catch (IOException e) {
+            System.err.println("Erreur chargement de la fenetre d'ajout: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     @FXML
