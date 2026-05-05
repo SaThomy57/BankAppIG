@@ -61,4 +61,16 @@ Ainsi, il y a aussi le maintient à jour du diagramme UML pour les classes de mo
 Gestion de l'ajout de nouveau client ainsi que du trie et de la barre de recherche généré par le **MainView.fxml**.
 
 3. Mise à jour de l'interface principale de la banque avec le **fxml** et le **MainController**
++ Creation des View en fxml : **MainView.fxml**, **CompteCell.fxml**, **UserCell.fxml**, **ClientDetailView.fxml**, **AjouterClientView**  
+*Chacun des fichiers '.fxml' précédents sont une vue ou une interaction possible avec l'interface de la banque.*  
++ Création des **utils.controller** sous forme de classe : **UserCellController**, **MainController** ->*déja implementer precedement mais mis a jour avec les autre controller*,
+**CompteController**, **ClientDetailController**, **AjouterClientController**.
++ Ajout de différentes methodes de tri en fonction du **nom** ou de l'**ID**  
+Ajout d'une methode **isAscendant()** pour implementer l'inverse des tris
+
+4. Ajout d'une enumeration **TypeCompte** dans le modele ainsi que **BankUtils** dans le fichier *util* pour 
+gerer la creation d'un compte avec une iban aléatoire ainsi qu'avec un type comme *'courant'* ou *'epargne'* ainsi que 
+l'ajustement de certain label dans CompteCell.fxml
+
+5. ... 
   
