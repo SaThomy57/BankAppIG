@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Bank.util.controller.AjouterClientController" style="-fx-padding: 20;">
+    <children>
+        <Label text="Ajouter un nouveau client" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+        <TextField fx:id="nomField" promptText="Nom"/>
+        <TextField fx:id="prenomField" promptText="Prénom"/>
+        <DatePicker fx:id="dateNaissancePicker" promptText="Date de naissance"/>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Annuler" onAction="#handleAnnuler"/>
+            <Button text="Enregistrer" onAction="#handleEnregistrer" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+        </HBox>
+    </children>
+</VBox>
