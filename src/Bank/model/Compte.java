@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Compte {
+    private final String type = "Courant";
     private final String iban;
     private double solde;
     private final List<Transaction> transactions;
@@ -26,6 +27,9 @@ public class Compte {
     }
 
     //Getter
+    public String getTypeCompte() {
+        return type;
+    }
     public String getIban() {
         return iban;
     }
