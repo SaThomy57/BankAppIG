@@ -1,4 +1,4 @@
-# Bank
+# Bank.BankApp
 ****
 *Réalisation d'un projet personnel graphique à l'aide d'une collection de comptes et 
 de transactions bancaires*
@@ -57,7 +57,7 @@ Ainsi, il y a aussi le maintient à jour du diagramme UML pour les classes de mo
 1. Gestion de la vue principale avec **'MainView.fxml'**
   > gestion de la barre de recherche ainsi que du tri complémentaire
 
-2. Implémentation du controller **'MainController'** dans l'arborescence **'*Bank\util\controller\MainController*'** :  
+2. Implémentation du controller **'MainController'** dans l'arborescence **'*Bank.BankApp\util\controller\MainController*'** :  
 Gestion de l'ajout de nouveau client ainsi que du trie et de la barre de recherche généré par le **MainView.fxml**.
 
 3. Mise à jour de l'interface principale de la banque avec le **fxml** et le **MainController**
