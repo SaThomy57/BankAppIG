@@ -13,4 +13,8 @@ public interface BanqueViewModel {
 
     // Methode d'ajout d'un client
     void ajouterClientSimple(Client client);
+
+    // Methode de tri
+    void trierClients(String trierPar);
+    boolean isAscendant();
 }
