@@ -1,3 +1,5 @@
+package Bank;
+
 import Bank.util.controller.MainController;
 import Bank.viewModel.BanqueViewModel;
 import Bank.viewModel.stubViewModel.StubBanqueViewModel;
@@ -5,18 +7,23 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 
 import java.io.IOException;
 
-public class Bank extends Application {
+public class BankApp extends Application {
+    private static final BanqueViewModel BanqueVM = new StubBanqueViewModel();
+
+    //On cree une methode statique pour y acceder partout
+    public static BanqueViewModel getBanqueVM(){
+        return BanqueVM;
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
         //Remplacement du BorderPane par le BanqueViewModel
-        BanqueViewModel banqueVM = new StubBanqueViewModel();
+        BanqueViewModel banqueVM = BankApp.getBanqueVM();
 
         //Verification du chemin
         java.net.URL resource = getClass().getResource("/Bank/view/MainView.fxml");
