@@ -102,4 +102,17 @@ public class Client {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
+    /**
+     * Fonction de verification d'égalité
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return id == client.getId();
+    }
 }
