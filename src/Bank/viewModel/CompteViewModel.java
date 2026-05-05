@@ -8,4 +8,7 @@ public interface CompteViewModel {
     StringProperty ibanProperty();
     //Le solde du compte
     DoubleProperty soldeProperty();
+
+    String getType();
+    double getSolde();
 }
