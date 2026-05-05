@@ -6,6 +6,7 @@ import Bank.viewModel.CompteViewModel;
 import Bank.viewModel.stubViewModel.StubBanqueViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Side;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -57,6 +58,9 @@ public class ClientDetailController {
         }
         if (budgetPieChart != null) {
             budgetPieChart.setData(viewModel.getStaticClientBudget());
+            budgetPieChart.setLabelsVisible(true); // Affiche les noms
+            budgetPieChart.setLegendSide(Side.BOTTOM); // Place la légende en bas
+            budgetPieChart.setClockwise(false);
         }
     }
     /**
