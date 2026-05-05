@@ -116,8 +116,18 @@ public class MainController {
     }
 
     @FXML
-    private void handleTri(){
-        //Le tri n'est pas géré ici
+    private void handleTriId(){
+        if (banqueVM != null) {
+            banqueVM.trierClients("id");
+            clientListView.refresh();
+        }
+    }
+    @FXML
+    private void handleTriNom(){
+        if (banqueVM != null) {
+            banqueVM.trierClients("nom");
+            clientListView.refresh();
+        }
     }
     @FXML
     private void handleCLientSelection(Client client){
