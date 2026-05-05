@@ -6,7 +6,10 @@
 <HBox fx:id="root" spacing="10" alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml" style="-fx-padding: 5;">
     <children>
-        <Label fx:id="typeCompteLabel" style="-fx-font-weight: bold;"/>
-        <Region HBox.hgrow="ALWAYS"/> <Label fx:id="soldeLabel" style="-fx-text-fill: #27ae60; -fx-font-weight: bold;"/>
+        <VBox HBox.hgrow="ALWAYS">
+            <Label fx:id="typeCompteLabel" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Type de Compte"/>
+            <Label text="Disponible" style="-fx-text-fill: #95a5a6; -fx-font-size: 11px;"/>
+        </VBox>
+        <Label fx:id="soldeLabel" style="-fx-text-fill: #2ecc71; -fx-font-weight: bold; -fx-font-size: 14px;"/>
     </children>
 </HBox>
