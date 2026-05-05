@@ -13,7 +13,7 @@
                 <ListView fx:id="comptesListView"/>
             </VBox>
             <VBox spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
-                <Label text="" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <Label text="Repartition du budget" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
                 <PieChart fx:id="budgetPieChart" prefWidth="300" prefHeight="300"/>
             </VBox>
 
