@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static Bank.util.BankUtils.genererIbanFRANCE;
+
 public class Compte {
-    private final String type = "Courant";
+    private final TypeCompte type;
     private final String iban;
     private double solde;
     private final List<Transaction> transactions;
 
     // COnstructeur d'un compte bancaire
-    public Compte(String iban, double solde) {
-        this.iban = iban;
+    public Compte(TypeCompte type, double solde) {
+        this.type = type;
+        this.iban = genererIbanFRANCE();
         this.solde = solde;
         this.transactions = new ArrayList<>();
     }
@@ -27,7 +30,7 @@ public class Compte {
     }
 
     //Getter
-    public String getTypeCompte() {
+    public TypeCompte getTypeCompte() {
         return type;
     }
     public String getIban() {
