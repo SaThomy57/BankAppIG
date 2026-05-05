@@ -36,8 +36,10 @@ public class ClientDetailController {
     }
     @FXML
     public void initialize(){
-        if (viewModel != null && nomClientLabel != null && soldeTotalLabel != null) {
+        //Ligne qui permet de lire le nom complet du client sur sa page d'information
+        nomClientLabel.setText(viewModel.nomCompletProperty().getValue());
 
+        if (viewModel != null && nomClientLabel != null && soldeTotalLabel != null) {
             if (compteListView != null) {
                 compteListView.setCellFactory(listView -> new CompteCellController());
             }
@@ -59,7 +61,7 @@ public class ClientDetailController {
         if (budgetPieChart != null) {
             budgetPieChart.setData(viewModel.getStaticClientBudget());
             budgetPieChart.setLabelsVisible(true); // Affiche les noms
-            budgetPieChart.setLegendSide(Side.BOTTOM); // Place la légende en bas
+            budgetPieChart.setTitle("Patrimoine");
             budgetPieChart.setClockwise(false);
         }
     }
