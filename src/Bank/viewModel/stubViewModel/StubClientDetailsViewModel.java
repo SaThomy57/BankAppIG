@@ -40,9 +40,18 @@ public class StubClientDetailsViewModel implements ClientDetailsViewModel {
     public ObservableList<TransactionViewModel> getTransactionsOfCompte() {
         return transactions;
     }
-    @Override
+    /*@Override
     public ObservableList<PieChart.Data> getStaticClientBudget() {
         return statBudget;
+    }*/
+    @Override
+    public ObservableList<PieChart.Data> getStaticClientBudget() {
+        // On simule des parts de budget basées sur les comptes ou des catégories
+        return FXCollections.observableArrayList(
+                new PieChart.Data("Compte Courant", 1500),
+                new PieChart.Data("Livret A", 4500),
+                new PieChart.Data("Épargne Logement", 2000)
+        );
     }
     @Override
     public void setCompteActif(Compte compte) {
