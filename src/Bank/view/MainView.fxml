@@ -18,7 +18,12 @@
     <bottom>
         <HBox alignment="CENTER" spacing="15" style="-fx-padding: 10">
             <Button text="Ajouter Client" onAction="#handleAjouterClient"/>
-            <Button text="Trier la collection" onAction="#handleTri"/>
+            <MenuButton text="Trier par...">
+                <items>
+                    <MenuItem text="Identifiant 1-10" onAction="#handleTriId"/>
+                    <MenuItem text="Nom A-Z" onAction="#handleTriNom"/>
+                </items>
+            </MenuButton>
         </HBox>
     </bottom>
 
